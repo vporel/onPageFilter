@@ -14,16 +14,17 @@
 		<h1>onPageFilter - Demonstration</h1>
 		<div id="filter">
 			<input type="text" id="title"/>
+			<input type="text" id="text"/>
 			<button id="apply-filter">Appliquer</button>
 		</div>
 		<div id="zone">
 			<div>
 				<h3 data-title="Un texte">Un texte</h3>
-				<p>sdfsdfsdfsdfsdfs</p>
+				<p>papa</p>
 			</div>
 			<div>
 				<h3 data-title="Un deuxieme texte">Un deuxieme texte</h3>
-				<p>sdfsdfsdfsdfsdfs</p>
+				<p>papo</p>
 			</div>
 			<div>
 				<h3 data-title="Mon histoire">Mon histoire</h3>
@@ -41,7 +42,8 @@
 				$('#filter').onPageFilter({
 					targets: "#zone div",
 					bindings: [
-						["#title", "h3", "data-title"]
+						["#title", "h3", "data-title"],
+						["#text", "p"]
 					],
 					auto: true,
 					applyingElement: "#apply-filter"
