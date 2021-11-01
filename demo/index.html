@@ -1,0 +1,52 @@
+<!--
+	This web page shows you an example of VPSlider plug-in
+-->
+
+<!DOCTYPE HTML> 
+<html lang="fr">
+	<head>
+		<title>onPageFilter - demo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet"type="text/css"href="style.css"/>
+	</head>
+	<body>
+		<h1>onPageFilter - Demonstration</h1>
+		<div id="filter">
+			<input type="text" id="title"/>
+			<button id="apply-filter">Appliquer</button>
+		</div>
+		<div id="zone">
+			<div>
+				<h3 data-title="Un texte">Un texte</h3>
+				<p>sdfsdfsdfsdfsdfs</p>
+			</div>
+			<div>
+				<h3 data-title="Un deuxieme texte">Un deuxieme texte</h3>
+				<p>sdfsdfsdfsdfsdfs</p>
+			</div>
+			<div>
+				<h3 data-title="Mon histoire">Mon histoire</h3>
+				<p>sdfsdfsdfsdfsdfs</p>
+			</div>
+			<div>
+				<h3 data-title="Une deuxieme histoire">Une deuxieme histoire</h3>
+				<p>sdfsdfsdfsdfsdfs</p>
+			</div>
+		</div>		
+		<script language="javascript"src="../src/jquery.js"></script>
+		<script language="javascript"src="../src/jquery.vporel.onPageFilter.js"></script>
+		<script language="javascript">
+			$(function(){
+				$('#filter').onPageFilter({
+					targets: "#zone div",
+					bindings: [
+						["#title", "h3", "data-title"]
+					],
+					auto: true,
+					applyingElement: "#apply-filter"
+				});
+			});
+		</script>
+	</body>
+</html>
